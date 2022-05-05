@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Ceiba Json Kotlin</string>
+    <string name="publicaciones_label">Publicaciones</string>
+</resources>
