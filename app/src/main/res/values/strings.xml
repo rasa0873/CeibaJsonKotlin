@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Ceiba Json Kotlin</string>
     <string name="publicaciones_label">Publicaciones</string>
+    <string name="find">Find</string>
+    <string name="publicacion_titulo">Publicacion, titulo</string>
+    <string name="user_name">User Name</string>
+    <string name="sample_phone_num">1 800 2349988</string>
+    <string name="sample_email">charles.white@company.com</string>
+    <string name="ver_publicaciones">VER PUBLICACIONES</string>
 </resources>

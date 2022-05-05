@@ -74,7 +74,7 @@ class Publica : AppCompatActivity() {
 
     fun buildRecyclerView() {
 
-        var adapter = PublicacionesAdapter(publicacionesArrayList, this)
+        val adapter = PublicacionesAdapter(publicacionesArrayList, this)
 
         val manager = LinearLayoutManager(this)
         publicaRV!!.setHasFixedSize(true)

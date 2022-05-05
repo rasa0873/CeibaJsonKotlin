@@ -18,11 +18,11 @@ import org.json.JSONException
 
 class MainActivity : AppCompatActivity(), JumpListener {
 
-    var usersRV: RecyclerView? = null
+    private var usersRV: RecyclerView? = null
 
     var userModalArrayList : ArrayList<UserModal>? = null
 
-    var url = "https://jsonplaceholder.typicode.com/users"
+    private var url = "https://jsonplaceholder.typicode.com/users"
 
     private var progressBar: ProgressBar? = null
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), JumpListener {
 
     }
 
-    fun copyArrayList() {
+    private fun copyArrayList() {
         userNames = ArrayList()
         userPhones = ArrayList()
         userMails = ArrayList()
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity(), JumpListener {
 
     fun buildRecyclerView() {
         // initializing our adapter class.
-        var adapter = UserAdapter(userModalArrayList, this)
+        val adapter = UserAdapter(userModalArrayList, this)
         adapter.addListener(this)
 
         val manager = LinearLayoutManager(this)

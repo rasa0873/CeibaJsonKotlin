@@ -31,8 +31,8 @@ class UserAdapter() : Adapter<UserAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val pos = Integer.toString(position+1)
-        var modal : UserModal? = userDataArrayList?.get(position)
+        val pos = (position + 1).toString()
+        val modal : UserModal? = userDataArrayList?.get(position)
         holder.userNameTV.text = modal!!.getUserName()
         holder.userPhoneTV.text = modal.getUserPhone()
         holder.userEmailTV.text = modal.getUserEmail()

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.*
-import java.lang.ref.WeakReference
 
 class PublicacionesAdapter() : Adapter<PublicacionesAdapter.ViewHolder>() {
 
@@ -29,8 +28,8 @@ class PublicacionesAdapter() : Adapter<PublicacionesAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val pos = Integer.toString(position+1)
-        var namePublicacion : String? = publicacionesArrayList?.get(position)
+        val pos = (position + 1).toString()
+        val namePublicacion : String? = publicacionesArrayList?.get(position)
         holder.publicacionNameTV.text = namePublicacion
     }
 
