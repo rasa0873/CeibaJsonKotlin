@@ -31,13 +31,15 @@ class UserAdapter() : Adapter<UserAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val pos = (position + 1).toString()
         val modal : UserModal? = userDataArrayList?.get(position)
         holder.userNameTV.text = modal!!.getUserName()
         holder.userPhoneTV.text = modal.getUserPhone()
         holder.userEmailTV.text = modal.getUserEmail()
+        holder.publicacionesTV.contentDescription = modal.getUserPosition()
 
-        holder.publicacionesTV.setOnClickListener { release(pos) }
+        holder.publicacionesTV.setOnClickListener {
+            release(holder.publicacionesTV.contentDescription.toString())
+        }
 
     }
 
@@ -65,11 +67,6 @@ class UserAdapter() : Adapter<UserAdapter.ViewHolder>() {
             userPhoneTV = itemView.findViewById(R.id.idTVPhone)
             userEmailTV = itemView.findViewById(R.id.idTVEmail)
             publicacionesTV = itemView.findViewById(R.id.idTVPublicaciones)
-            //publicacionesTV.setOnClickListener {
-            //    Log.i("ETIQUETA", "Publicaciones hit with: ${publicacionesTV.contentDescription.toString()}")
-                //listener.get()?.onReadRequest()
-            //    UserAdapter().release()
-            //}
         }
 
     }

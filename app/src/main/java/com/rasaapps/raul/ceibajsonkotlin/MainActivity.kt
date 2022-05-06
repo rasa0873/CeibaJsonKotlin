@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), JumpListener {
     var userNames: List<String>? = null
     var userPhones: List<String>? = null
     var userMails: List<String>? = null
+    var userPos: List<String>?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,12 +52,15 @@ class MainActivity : AppCompatActivity(), JumpListener {
         userNames = ArrayList()
         userPhones = ArrayList()
         userMails = ArrayList()
-        Log.i("ETIQUETA", "list size: " + userModalArrayList!!.size)
+        userPos = ArrayList()
+
+        // Retrieve from userModalArrayList
         for (i in userModalArrayList!!.indices) {
-            Log.i("ETIQUETA", userModalArrayList!![i].getUserName()!!)
+            // TODO add userPosition
             (userNames as ArrayList<String>).add(userModalArrayList!![i].getUserName()!!)
             (userPhones as ArrayList<String>).add(userModalArrayList!![i].getUserPhone()!!)
             (userMails as ArrayList<String>).add(userModalArrayList!![i].getUserEmail()!!)
+            (userPos as ArrayList<String>).add(userModalArrayList!![i].getUserPosition()!!)
         }
     }
 
@@ -75,8 +79,9 @@ class MainActivity : AppCompatActivity(), JumpListener {
                         val userName = responseObj.getString("name")
                         val userPhone = responseObj.getString("phone")
                         val userEmail = responseObj.getString("email")
+                        val userPosition = (i + 1).toString()
 
-                        userModalArrayList!!.add(UserModal(userName, userEmail, userPhone))
+                        userModalArrayList!!.add(UserModal(userName, userEmail, userPhone, userPosition))
                         buildRecyclerView()
                     } catch (e: JSONException) {
                         e.printStackTrace()
@@ -124,7 +129,7 @@ class MainActivity : AppCompatActivity(), JumpListener {
                     if (userNames!![x].contains(newText)) userModalArrayList!!.add(
                         UserModal(
                             userNames!![x], userMails!![x],
-                            userPhones!![x]
+                            userPhones!![x], userPos!![x]
                         )
                     )
                 }
