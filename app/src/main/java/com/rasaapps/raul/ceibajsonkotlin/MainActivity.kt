@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity(), JumpListener {
 
         // Retrieve from userModalArrayList
         for (i in userModalArrayList!!.indices) {
-            // TODO add userPosition
             (userNames as ArrayList<String>).add(userModalArrayList!![i].getUserName()!!)
             (userPhones as ArrayList<String>).add(userModalArrayList!![i].getUserPhone()!!)
             (userMails as ArrayList<String>).add(userModalArrayList!![i].getUserEmail()!!)
