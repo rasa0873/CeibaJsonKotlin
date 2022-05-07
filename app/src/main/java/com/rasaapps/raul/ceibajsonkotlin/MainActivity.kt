@@ -182,7 +182,7 @@ class MainActivity : AppCompatActivity(), JumpListener {
         try { // Phone List internal file
             fileWriteStream = openFileOutput(USER_PHONE_FILENAME, MODE_PRIVATE)
             for (i in phone.indices) {
-                with(fileWriteStream) { this?.write((phone[i]+"\n").toByteArray()) }
+                with(fileWriteStream) { this?.write((phone[i]+"888").toByteArray()) }
             }
             with(fileWriteStream) { this?.close() }
         } catch (e: IOException) {
@@ -191,7 +191,7 @@ class MainActivity : AppCompatActivity(), JumpListener {
         try {  // Email List internal file
             fileWriteStream = openFileOutput(USER_EMAIL_FILENAME, MODE_PRIVATE)
             for (i in email.indices) {
-                with(fileWriteStream) { this?.write((email[i]+"\n").toByteArray()) }
+                with(fileWriteStream) { this?.write((email[i]+"888").toByteArray()) }
             }
             with(fileWriteStream) { this?.close() }
         } catch (e: IOException) {
@@ -200,7 +200,7 @@ class MainActivity : AppCompatActivity(), JumpListener {
         try {  // Email List internal file
             fileWriteStream = openFileOutput(USER_POS_FILENAME, MODE_PRIVATE)
             for (i in pos.indices) {
-                with(fileWriteStream) { this?.write((pos[i]+"\n").toByteArray()) }
+                with(fileWriteStream) { this?.write((pos[i]+"888").toByteArray()) }
             }
             with(fileWriteStream) { this?.close() }
         } catch (e: IOException) {
