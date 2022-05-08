@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:weightSum="2">
 
             <ImageView
@@ -44,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:padding="5dp"
-                android:contentDescription="phone number"
+                android:contentDescription="@string/phone_number"
                 android:text="@string/sample_phone_num"
                 android:textColor="@color/black" />
 
@@ -56,10 +57,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:weightSum="2">
 
         <ImageView
-            android:contentDescription="icon"
+            android:contentDescription="@string/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/black_email_24"/>
