@@ -239,19 +239,29 @@ class MainActivity : AppCompatActivity(), JumpListener {
 
     fun restoreFromFiles() {
 
+        // Attempt to retrieve useNames userMails userPhones userPos lists
         readInternalFile(USER_NAME_FILENAME)
         readInternalFile(USER_PHONE_FILENAME)
         readInternalFile(USER_EMAIL_FILENAME)
         readInternalFile(USER_POS_FILENAME)
 
-        userModalArrayList!!.clear() // clear the list first
-        // Now reconstruct the array list
-        for (x in userNames!!.indices) {
-            userModalArrayList!!.add(UserModal(
-                userNames!![x], userMails!![x],
-                userPhones!![x], userPos!![x]))
+          userModalArrayList!!.clear() // clear the list first
+          // Now reconstruct the array list
+        if (userNames.isNullOrEmpty()){
+            progressBar!!.visibility = View.GONE
+            Toast.makeText(this, "Fail to retrieve the data..", Toast.LENGTH_SHORT).show()
+            return
         }
-        buildRecyclerView() // refresh the RV
+          for (x in userNames!!.indices) {
+              userModalArrayList!!.add(
+                  UserModal(
+                      userNames!![x], userMails!![x],
+                      userPhones!![x], userPos!![x]
+                  )
+              )
+          }
+          buildRecyclerView() // refresh the RV
+
     }
 
 
